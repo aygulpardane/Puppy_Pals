@@ -1,7 +1,6 @@
 import {puppyList} from './data.js' // we pass the puppyList array from the data.js file as the default value
 import { useState } from 'react'
 import './App.css'
-import './path-to-css.css'
 
 function App() {
 
@@ -25,26 +24,31 @@ function App() {
 
   return (
     <div>
-      {featPupId && (
-        // both the <h2> and <ul> tags need to be rendered in one parent element
-        <div>
-        <h2>{featuredPup.name}</h2>
-        <ul>
-          <li>Age: {featuredPup.age}</li>
-          <li>Email: {featuredPup.email}</li>
-        </ul>
-        </div>
-      )}
+      <div>
+        <h1>Click on a puppy to reveal more info!</h1>
+      </div>
+      <div className = "puppyContainer">
+        {featPupId && (
+          // both the <h2> and <ul> tags need to be rendered in one parent element
+          <div className = "featuredPuppy">
+          <h2>{featuredPup.name}</h2>
+          <ul>
+            <li>Age: {featuredPup.age}</li>
+            <li>Email: {featuredPup.email}</li>
+          </ul>
+          </div>
+        )}
 
-      {
-        puppies.map((puppy) => {
+        {
+          puppies.map((puppy) => {
 
-          // we can pass a function into the onClick handler just like we did in addEventListener. We also coud've defined a function outside the return and passed it into onClick:
+            // we can pass a function into the onClick handler just like we did in addEventListener. We also coud've defined a function outside the return and passed it into onClick:
 
-          return <p onClick={() => {setFeatPupId(puppy.id)}} key ={puppy.id}>{puppy.name}</p>
+            return <p className = "singlePuppy" onClick={() => {setFeatPupId(puppy.id)}} key ={puppy.id}>{puppy.name}</p>
 
-        })
-      }
+          })
+        }
+      </div>
     </div>
   );
 }

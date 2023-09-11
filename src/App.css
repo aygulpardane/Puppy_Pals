@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-color: #4699e0;
 }
 
 .logo {
@@ -39,4 +40,23 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.puppyContainer {
+  border: #f9b54eaa 5px solid;
+  height: auto;
+  width: 80vw;
+  align-content: center;
+  border-radius: 8px;
+  border: 1px solid transparent;
+}
+
+.featuredPuppy {
+  border: yellow 5px solid;
+  border-radius: 8px;
+  border: 1px solid rgb(235, 235, 245);
+}
+
+.singlePuppy:hover {
+  color:#cae867
 }
